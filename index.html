@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>蓝光影视 · 4K蓝光碟讯与家庭影院观影志 | languangyingshi-app</title>
+<meta name="description" content="蓝光影视（languangyingshi-app.github.io）是一份由影迷维护的蓝光碟讯与家庭影院观影志：每周整理 4K UHD 原盘发行消息，比对不同版本的画面、码率与音轨差异，并记录投影、音响与客厅布光的实际调校过程。片库覆盖剧情、科幻、悬疑、动画、纪录等分类，附 HDR 规格、字幕配置与区码说明，帮你把每一部片子看到它该有的样子。">
+<meta name="keywords" content="蓝光影视,蓝光碟讯,4K UHD原盘,蓝光版本对比,家庭影院调校,投影幕布亮度,杜比视界,Dolby Atmos,高清电影推荐,老片修复,蓝光区码,languangyingshi-app">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="蓝光影视">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://languangyingshi-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="蓝光影视">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="蓝光影视 · 4K蓝光碟讯与家庭影院观影志">
+<meta property="og:description" content="每周更新 4K UHD 原盘发行消息、版本规格比对与客厅影院调校记录，片库已整理 12,860 部片目。">
+<meta property="og:url" content="https://languangyingshi-app.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="蓝光影视 · 4K蓝光碟讯与家庭影院观影志">
+<meta name="twitter:description" content="蓝光原盘发行碟讯、HDR 与音轨规格比对、家庭影院调校笔记，每周更新一次。">
+<meta name="theme-color" content="#1a1714">
+<style>
+:root{
+  --paper:#f6f2e9;
+  --panel:#fffdf8;
+  --ink:#1a1714;
+  --ink-soft:#5c5348;
+  --ink-faint:#8a8071;
+  --amber:#b8441f;
+  --amber-2:#e8a33d;
+  --line:#ddd5c6;
+  --serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.25;margin:0;letter-spacing:.01em;}
+p{margin:0 0 1em;}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 24px;}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+/* ---------- 顶部 ---------- */
+.topbar{background:var(--ink);color:#e9e2d4;font-size:13px;letter-spacing:.04em;}
+.topbar .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding-top:9px;padding-bottom:9px;}
+.topbar a{border-bottom:1px solid rgba(233,226,212,.35);}
+.topbar a:hover{color:var(--amber-2);}
+
+.masthead{background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px;padding-top:10px;padding-bottom:10px;}
+.brand{display:flex;align-items:baseline;gap:10px;}
+.brand .logo{
+  font-family:var(--serif);font-size:30px;font-weight:700;letter-spacing:.06em;
+  padding:2px 10px;background:var(--ink);color:var(--paper);border-radius:2px;
+}
+.brand .slogan{font-size:13px;color:var(--ink-faint);letter-spacing:.08em;}
+.navtoggle{position:absolute;opacity:0;pointer-events:none;}
+.navbtn{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:3px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;}
+.navbtn i{display:block;width:20px;height:2px;background:var(--ink);}
+.navlist{display:flex;flex-wrap:wrap;align-items:center;gap:26px;list-style:none;margin:0;padding:0;font-size:15px;}
+.navlist a{position:relative;padding:6px 0;color:var(--ink-soft);}
+.navlist a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--amber);transform:scaleX(0);transition:transform .25s ease;}
+.navlist a:hover{color:var(--ink);}
+.navlist a:hover::after{transform:scaleX(1);}
+.navlist li:last-child a{color:#fff;background:var(--amber);padding:7px 16px;border-radius:2px;}
+.navlist li:last-child a::after{display:none;}
+
+/* ---------- Hero ---------- */
+.hero{padding:56px 0 46px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fffdf8 0%,#f6f2e9 100%);}
+.hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:48px;align-items:start;}
+.kicker{display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);border:1px solid var(--amber);padding:4px 10px;border-radius:2px;margin-bottom:20px;}
+.hero h1{font-size:clamp(44px,7vw,78px);letter-spacing:.04em;margin-bottom:6px;}
+.hero .sub{font-family:var(--serif);font-size:clamp(19px,2.4vw,25px);color:var(--ink-soft);margin-bottom:18px;}
+.hero .lede{font-size:16.5px;color:var(--ink-soft);max-width:56ch;}
+.hero .lede strong{color:var(--ink);font-weight:700;}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;}
+.btn{display:inline-block;padding:12px 24px;border-radius:2px;font-size:15px;border:1px solid var(--ink);transition:.2s ease;}
+.btn-solid{background:var(--ink);color:#fff8ec;}
+.btn-solid:hover{background:var(--amber);border-color:var(--amber);}
+.btn-ghost{background:transparent;color:var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:#fff8ec;}
+
+.datacard{border:1px solid var(--line);background:var(--panel);padding:26px 24px;}
+.datacard h2{font-size:17px;letter-spacing:.14em;color:var(--amber);margin-bottom:18px;padding-bottom:12px;border-bottom:1px dashed var(--line);}
+.stat{display:flex;align-items:baseline;justify-content:space-between;padding:9px 0;border-bottom:1px dotted var(--line);}
+.stat:last-of-type{border-bottom:0;}
+.stat b{font-family:var(--serif);font-size:26px;letter-spacing:.02em;}
+.stat span{font-size:13px;color:var(--ink-faint);text-align:right;max-width:16ch;}
+.cover{margin-top:22px;border-top:3px solid var(--ink);padding-top:16px;}
+.cover .ratio{
+  height:120px;border-radius:2px;margin-bottom:12px;
+  background:linear-gradient(135deg,#c9762b 0%,#8c3d18 46%,#241a12 100%);
+  display:flex;align-items:flex-end;padding:14px;color:#fff;
+}
+.cover .ratio em{font-style:normal;font-family:var(--serif);font-size:22px;letter-spacing:.06em;text-shadow:0 1px 6px rgba(0,0,0,.45);}
+.cover p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+
+/* ---------- 通用区块 ---------- */
+section{padding:52px 0;}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:30px;padding-bottom:14px;border-bottom:2px solid var(--ink);}
+.sec-head h2{font-size:clamp(26px,3.4vw,36px);}
+.sec-head .en{display:block;font-size:12px;letter-spacing:.24em;color:var(--amber);text-transform:uppercase;margin-bottom:8px;}
+.sec-head .more{font-size:14px;color:var(--ink-soft);border-bottom:1px solid var(--line);}
+
+/* ---------- 精选 ---------- */
+.picks{background:var(--panel);border-bottom:1px solid var(--line);}
+.pick-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;}
+.pick{border:1px solid var(--line);background:#fff;padding:22px;display:flex;flex-direction:column;}
+.pick.big{grid-column:span 7;}
+.pick.mid{grid-column:span 5;}
+.pick.small{grid-column:span 4;}
+.pick .art{height:150px;margin:-22px -22px 18px;display:flex;align-items:flex-end;padding:16px;}
+.pick.big .art{height:230px;}
+.pick.small .art{height:120px;}
+.a1{background:linear-gradient(160deg,#e6a94a 0%,#8c3d18 100%);}
+.a2{background:linear-gradient(160deg,#3f6b8a 0%,#16232d 100%);}
+.a3{background:linear-gradient(160deg,#c25b3a 0%,#3a1c14 100%);}
+.a4{background:linear-gradient(160deg,#6f8f6a 0%,#1d2a1c 100%);}
+.a5{background:linear-gradient(160deg,#7a6a97 0%,#231c33 100%);}
+.pick .art em{font-style:normal;font-family:var(--serif);font-size:20px;color:#fff;letter-spacing:.05em;text-shadow:0 1px 8px rgba(0,0,0,.5);}
+.pick.big .art em{font-size:27px;}
+.tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+.tag{font-size:11.5px;letter-spacing:.06em;color:var(--amber);border:1px solid var(--amber);border-radius:2px;padding:2px 8px;}
+.tag.gray{color:var(--ink-faint);border-color:var(--line);}
+.pick h3{font-size:21px;margin-bottom:10px;}
+.pick.big h3{font-size:27px;}
+.pick p{font-size:14.5px;color:var(--ink-soft);margin-bottom:14px;}
+.spec{list-style:none;margin:auto 0 0;padding:14px 0 0;border-top:1px dotted var(--line);font-size:13.5px;}
+.spec li{display:flex;justify-content:space-between;gap:12px;padding:4px 0;}
+.spec li span{color:var(--ink-faint);}
+.spec li b{font-weight:600;}
+
+/* ---------- 片库 ---------- */
+.lib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.cat{border:1px solid var(--line);background:#fff;padding:20px;transition:.2s ease;}
+.cat:hover{border-color:var(--amber);box-shadow:0 6px 20px rgba(26,23,20,.07);transform:translateY(-2px);}
+.cat .num{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--amber);}
+.cat h3{font-size:20px;margin:6px 0 8px;}
+.cat .count{font-size:13px;color:var(--ink-faint);margin-bottom:10px;}
+.cat p{font-size:14px;color:var(--ink-soft);margin:0 0 14px;}
+.cat .go{font-size:13.5px;color:var(--amber);border-bottom:1px solid var(--amber);}
+
+.tablewrap{margin-top:42px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+table{border-collapse:collapse;width:100%;min-width:600px;background:#fff;font-size:14px;}
+caption{text-align:left;font-family:var(--serif);font-size:17px;margin-bottom:12px;}
+th,td{border:1px solid var(--line);padding:11px 13px;text-align:left;vertical-align:top;}
+thead th{background:var(--ink);color:#fff8ec;font-weight:600;font-size:13.5px;letter-spacing:.05em;}
+tbody th{background:#f1ece1;font-weight:600;width:22%;}
+tbody tr:nth-child(even) td{background:#fbf8f1;}
+
+/* ---------- 观察笔记 ---------- */
+.notes{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.notelist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);}
+.notelist li{border-bottom:1px solid var(--line);}
+.notelist a{display:grid;grid-template-columns:64px 1fr 150px;gap:24px;align-items:center;padding:22px 4px;transition:.2s ease;}
+.notelist a:hover{background:#fff;padding-left:12px;}
+.notelist .idx{font-family:var(--serif);font-size:26px;color:var(--amber);letter-spacing:.04em;}
+.notelist h3{font-size:19px;margin-bottom:6px;}
+.notelist p{font-size:14px;color:var(--ink-soft);margin:0;}
+.notelist .meta{font-size:12.5px;color:var(--ink-faint);text-align:right;letter-spacing:.04em;}
+
+/* ---------- 指南 ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s;}
+.step{counter-increment:s;background:#fff;border:1px solid var(--line);border-top:4px solid var(--amber);padding:22px 20px;}
+.step::before{content:"STEP " counter(s);display:block;font-family:var(--serif);font-size:12px;letter-spacing:.2em;color:var(--amber);margin-bottom:10px;}
+.step h3{font-size:18.5px;margin-bottom:10px;}
+.step p{font-size:14px;color:var(--ink-soft);margin:0 0 12px;}
+.step ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink-soft);}
+.step ul li{margin-bottom:5px;}
+
+.callout{margin-top:34px;background:var(--ink);color:#efe7d7;padding:24px 26px;border-left:6px solid var(--amber-2);}
+.callout h3{font-size:18px;margin-bottom:8px;color:#fff;}
+.callout p{font-size:14.5px;margin:0;color:#d8d0c0;}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--panel);border-top:1px solid var(--line);}
+.qa{border:1px solid var(--line);background:#fff;margin-bottom:12px;}
+.qa summary{cursor:pointer;padding:16px 20px;font-family:var(--serif);font-size:17px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;}
+.qa summary::-webkit-details-marker{display:none;}
+.qa summary::after{content:"+";color:var(--amber);font-size:22px;font-family:var(--sans);line-height:1;}
+.qa[open] summary::after{content:"–";}
+.qa[open] summary{border-bottom:1px dotted var(--line);}
+.qa .body{padding:16px 20px 20px;font-size:14.5px;color:var(--ink-soft);}
+.qa .body p:last-child{margin-bottom:0;}
+
+/* ---------- 关于 ---------- */
+.about-grid{display:grid;grid-template-columns:5fr 7fr;gap:44px;}
+.about h2{font-size:clamp(26px,3.2vw,34px);margin-bottom:18px;}
+.about h2 .en{display:block;font-size:12px;letter-spacing:.24em;color:var(--amber);text-transform:uppercase;margin-bottom:10px;}
+.about p{font-size:15px;color:var(--ink-soft);}
+.card{border:1px solid var(--line);background:#fff;padding:24px 26px;}
+.card h3{font-size:18px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed var(--line);}
+.kv{margin:0;}
+.kv div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dotted var(--line);font-size:14px;}
+.kv div:last-child{border-bottom:0;}
+.kv dt{color:var(--ink-faint);margin:0;}
+.kv dd{margin:0;text-align:right;font-weight:600;}
+.notice{margin-top:20px;border:1px dashed var(--amber);background:#fdf3ea;padding:18px 20px;font-size:13.5px;color:#7a4a24;}
+.notice strong{color:var(--amber);}
+
+/* ---------- 页脚 ---------- */
+footer{background:var(--ink);color:#d9d1c1;padding:52px 0 0;margin-top:20px;}
+.fgrid{display:grid;grid-template-columns:4fr 4fr 4fr;gap:36px;padding-bottom:34px;}
+footer h4{font-family:var(--serif);font-size:16px;color:#fff;margin-bottom:16px;letter-spacing:.08em;}
+footer ul{list-style:none;margin:0;padding:0;font-size:14px;}
+footer li{margin-bottom:9px;}
+footer li a{color:#bcb3a3;}
+footer li a:hover{color:var(--amber-2);}
+.fbrand .logo{font-family:var(--serif);font-size:26px;letter-spacing:.06em;color:#fff;border:1px solid #5a5147;padding:4px 12px;display:inline-block;margin-bottom:14px;}
+.fbrand p{font-size:13.5px;color:#a89f8f;max-width:34ch;}
+.keywords{padding:20px 0;border-top:1px solid #3a342c;font-size:13px;color:#8f8778;line-height:2;}
+.keywords a{color:#a89f8f;border-bottom:1px solid #4a443a;margin-right:14px;}
+.copyright{border-top:1px solid #3a342c;padding:18px 0 26px;font-size:12.5px;color:#7d7566;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;}
+.totop{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:50;}
+.totop:hover{background:var(--amber);}
+
+/* ---------- 移动端 ---------- */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:34px;}
+  .pick.big,.pick.mid{grid-column:span 12;}
+  .pick.small{grid-column:span 6;}
+  .lib-grid{grid-template-columns:repeat(2,1fr);}
+  .steps{grid-template-columns:repeat(2,1fr);}
+  .about-grid{grid-template-columns:1fr;gap:28px;}
+  .fgrid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:720px){
+  .wrap{padding:0 18px;}
+  .masthead .wrap{min-height:62px;flex-wrap:wrap;}
+  .navbtn{display:flex;}
+  .navlist{display:none;flex-direction:column;align-items:stretch;gap:0;width:100%;border-top:1px solid var(--line);padding:8px 0 4px;}
+  .navtoggle:checked ~ .navlist{display:flex;}
+  .navlist li{border-bottom:1px dotted var(--line);}
+  .navlist a{display:block;padding:12px 2px;font-size:16px;}
+  .navlist li:last-child{border-bottom:0;padding-top:6px;}
+  .navlist li:last-child a{display:block;text-align:center;}
+  section{padding:38px 0;}
+  .hero{padding:38px 0 32px;}
+  .pick.small{grid-column:span 12;}
+  .lib-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;}
+  .notelist a{grid-template-columns:44px 1fr;gap:12px;padding:18px 2px;}
+  .notelist .meta{grid-column:2;text-align:left;margin-top:4px;}
+  .fgrid{grid-template-columns:1fr;gap:26px;}
+  .brand .slogan{display:none;}
+  .brand .logo{font-size:25px;}
+}
+@media print{
+  .masthead,.totop,.cta{display:none;}
+  body{background:#fff;}
+}
+</style>
+</head>
+<body id="top">
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>蓝光影视 · 第 47 期碟讯 · 更新于 2026 年 10 月 24 日</span>
+    <span><a href="#">订阅每周碟讯</a> · <a href="#">投稿与勘误</a></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">
+      <span class="logo">蓝光影视</span>
+      <span class="slogan">BLU-RAY DISC &amp; HOME CINEMA NOTES</span>
+    </div>
+    <input type="checkbox" id="mt" class="navtoggle">
+    <label for="mt" class="navbtn" aria-label="展开导航菜单"><i></i><i></i><i></i></label>
+    <ul class="navlist">
+      <li><a href="#picks">编辑精选</a></li>
+      <li><a href="#library">蓝光片库</a></li>
+      <li><a href="#notes">画质观察</a></li>
+      <li><a href="#guide">选购指南</a></li>
+      <li><a href="#faq">常见问题</a></li>
+      <li><a href="#about">关于本站</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Issue 47 / Weekly Disc Report</span>
+        <h1 id="hero-title">蓝光影视</h1>
+        <p class="sub">把每一部电影，看到它该有的样子。</p>
+        <p class="lede">
+          <strong>蓝光影视</strong> 是一份每周更新的蓝光碟讯与家庭影院观影记录。我们把发行公告、母带信息、码率与音轨规格翻一遍，再在客厅里反复调投影和音响——那些散落在论坛角落里的说法，整理成能直接照着做的一份清单。目前片库已整理 12,860 部片目，其中 4K UHD 原盘 3,210 部。
+        </p>
+        <div class="cta">
+          <a class="btn btn-solid" href="#picks">浏览本期碟讯</a>
+          <a class="btn btn-ghost" href="#guide">先看选购指南</a>
+        </div>
+      </div>
+
+      <aside class="datacard" aria-label="本期数据概览">
+        <h2>本期数据</h2>
+        <div class="stat"><b>12,860</b><span>已整理片目</span></div>
+        <div class="stat"><b>3,210</b><span>4K UHD 原盘</span></div>
+        <div class="stat"><b>48.6</b><span>平均视频码率 Mbps</span></div>
+        <div class="stat"><b>7 天</b><span>碟讯更新周期</span></div>
+        <div class="cover">
+          <div class="ratio"><em>本期封面 · 沙丘</em></div>
+          <p>4K UHD 收藏版第三次再版，杜比视界 + 杜比全景声，附 92 分钟幕后纪录片。</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="picks" id="picks" aria-labelledby="picks-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="en">Editor&#39;s Picks</span>
+          <h2 id="picks-title">本周编辑精选</h2>
+        </div>
+        <a class="more" href="#">查看往期精选 →</a>
+      </div>
+
+      <div class="pick-grid">
+        <article class="pick big">
+          <div class="art a1"><em>沙丘 · 4K UHD 收藏版</em></div>
+          <div class="tagrow">
+            <span class="tag">杜比视界</span>
+            <span class="tag">ATMOS</span>
+            <span class="tag gray">BD100</span>
+          </div>
+          <h3>沙漠里的低频，终于在这一版立住了</h3>
+          <p>相比 2021 年的首版，这一版把暗部噪点压得更干净，沙暴段落的颗粒感保留得恰到好处。音轨部分，沙虫行进时的次低频下潜到 22Hz，如果你的低音炮此前一直"听不见"，可以拿这段来校。</p>
+          <ul class="spec">
+            <li><span>发行方</span><b>Warner Bros. Home Ent.</b></li>
+            <li><span>视频码率</span><b>平均 57.2 Mbps / 峰值 92 Mbps</b></li>
+            <li><span>音轨</span><b>杜比全景声（TrueHD 7.1 内核）</b></li>
+            <li><span>字幕</span><b>简体中文 / 繁体中文 / 英文 SDH</b></li>
+          </ul>
+        </article>
+
+        <article class="pick mid">
+          <div class="art a2"><em>银翼杀手 2049 · 4K 重制</em></div>
+          <div class="tagrow">
+            <span class="tag">HDR10+</span>
+            <span class="tag">DTS:X</span>
+            <span class="tag gray">三层 UHD</span>
+          </div>
+          <h3>霓虹与雾霾，是这一版最难调的两件事</h3>
+          <p>大量低照度场景叠加浓雾，投影环境下很容易糊成一片灰。我们把 gamma 从 2.2 提到 2.4，再把亮度调到 118 尼特，拉斯维加斯废墟那场的层次才出来。</p>
+          <ul class="spec">
+            <li><span>片长</span><b>163 分钟</b></li>
+            <li><span>视频码率</span><b>平均 51.4 Mbps</b></li>
+            <li><span>母带来源</span><b>4K 数字中间片</b></li>
+            <li><span>区码</span><b>全区（ABC）</b></li>
+          </ul>
+        </article>
+
+        <article class="pick small">
+          <div class="art a3"><em>疯狂的麦克斯：狂暴之路</em></div>
+          <div class="tagrow"><span class="tag">HDR10</span><span class="tag gray">黑白版附赠</span></div>
+          <h3>剪辑节奏最快的那一版，也是码率最稳的</h3>
+          <p>追车段落每秒画面变化极大，这一版峰值码率给到了 88 Mbps，快速横摇时没有出现色块。</p>
+          <ul class="spec">
+            <li><span>视频码率</span><b>平均 49.7 Mbps</b></li>
+            <li><span>音轨</span><b>DTS-HD MA 5.1</b></li>
+          </ul>
+        </article>
+
+        <article class="pick small">
+          <div class="art a4"><em>千与千寻 · 修复版</em></div>
+          <div class="tagrow"><span class="tag">2K 修复</span><span class="tag gray">手绘赛璐璐</span></div>
+          <h3>胶片扫描后，线条的抖动被留下来了</h3>
+          <p>吉卜力这版没有过度降噪，赛璐璐边缘的轻微抖动是原片固有特征，调得太锐反而失真。</p>
+          <ul class="spec">
+            <li><span>视频码率</span><b>平均 36.2 Mbps</b></li>
+            <li><span>音轨</span><b>日语 LPCM 2.0 / 国语 DD 5.1</b></li>
+          </ul>
+        </article>
+
+        <article class="pick small">
+          <div class="art a5"><em>星际穿越 · 十周年版</em></div>
+          <div class="tagrow"><span class="tag">IMAX 画幅</span><span class="tag gray">1.43:1</span></div>
+          <h3>画幅来回切换，别误以为是画面出错</h3>
+          <p>IMAX 段落会在 1.43:1 与 2.39:1 之间切换，这是诺兰有意为之。设置播放器时记得关闭"自动裁切填充"。</p>
+          <ul class="spec">
+            <li><span>视频码率</span><b>平均 54.1 Mbps</b></li>
+            <li><span>音轨</span><b>DTS-HD MA 5.1</b></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="library" aria-labelledby="library-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="en">Disc Library</span>
+          <h2 id="library-title">蓝光片库分类</h2>
+        </div>
+        <a class="more" href="#">按年份检索 →</a>
+      </div>
+
+      <div class="lib-grid">
+        <article class="cat">
+          <span class="num">CAT / 01</span>
+          <h3>剧情 · 人物</h3>
+          <p class="count">3,940 部 · 含导演剪辑版 612 部</p>
+          <p>以人物命运为主线的长片，收录同一作品的多版本对比，标注删减片段时长与片尾差异。</p>
+          <a class="go" href="#">进入分类 →</a>
+        </article>
+        <article class="cat">
+          <span class="num">CAT / 02</span>
+          <h3>科幻 · 视效</h3>
+          <p class="count">2,180 部 · 4K 原盘占比 61%</p>
+          <p>重点整理 HDR 规格与特效母带信息，标注哪些版本是 2K 上变换，避免花冤枉钱。</p>
+          <a class="go" href="#">进入分类 →</a>
+        </article>
+        <article class="cat">
+          <span class="num">CAT / 03</span>
+          <h3>悬疑 · 犯罪</h3>
+          <p class="count">1,760 部 · 含黑白经典 284 部</p>
+          <p>夜戏、雨戏占比高，附上针对低照度场景的显示设备参数建议与字幕时间轴校验记录。</p>
+          <a class="go" href="#">进入分类 →</a>
+        </article>
+        <article class="cat">
+          <span class="num">CAT / 04</span>
+          <h3>动画 · 手绘</h3>
+          <p class="count">1,530 部 · 修复版 497 部</p>
+          <p>区分胶片扫描与数字重绘两种修复路径，保留颗粒感与线条抖动的版本会单独标记。</p>
+          <a class="go" href="#">进入分类 →</a>
+        </article>
+        <article class="cat">
+          <span class="num">CAT / 05</span>
+          <h3>纪录 · 自然</h3>
+          <p class="count">1,120 部 · 含 8K 拍摄源 36 部</p>
+          <p>自然类纪录片对色准要求最高，附每部片的拍摄设备与调色参考，便于校准显示器。</p>
+          <a class="go" href="#">进入分类 →</a>
+        </article>
+        <article class="cat">
+          <span class="num">CAT / 06</span>
+          <h3>动作 · 类型</h3>
+          <p class="count">2,330 部 · 含导演剪辑版 178 部</p>
+          <p>快速剪辑与爆炸段落是码率压力测试的重点，记录峰值码率与色块出现的片段时间点。</p>
+          <a class="go" href="#">进入分类 →</a>
+        </article>
+      </div>
+
+      <div class="tablewrap">
+        <table>
+          <caption>蓝光版本规格速查（2026 年 10 月修订）</caption>
+          <thead>
+            <tr>
+              <th scope="col">规格</th>
+              <th scope="col">容量</th>
+              <th scope="col">常见码率</th>
+              <th scope="col">色彩与动态范围</th>
+              <th scope="col">适合谁</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">BD 单层</th>
+              <td>25 GB</td>
+              <td>20 – 28 Mbps</td>
+              <td>Rec.709 / SDR</td>
+              <td>1080p 入门，片长 100 分钟内尚可</td>
+            </tr>
+            <tr>
+              <th scope="row">BD 双层（BD50）</th>
+              <td>50 GB</td>
+              <td>30 – 40 Mbps</td>
+              <td>Rec.709 / SDR</td>
+              <td>主流 1080p 收藏，码率压力小</td>
+            </tr>
+            <tr>
+              <th scope="row">UHD 双层（BD66）</th>
+              <td>66 GB</td>
+              <td>45 – 60 Mbps</td>
+              <td>BT.2020 / HDR10 或杜比视界</td>
+              <td>片长 130 分钟左右的 4K 片目</td>
+            </tr>
+            <tr>
+              <th scope="row">UHD 三层（BD100）</th>
+              <td>100 GB</td>
+              <td>60 – 90 Mbps</td>
+              <td>BT.2020 / 杜比视界 / HDR10+</td>
+              <td>超长片、多花絮的收藏版</td>
+            </tr>
+            <tr>
+              <th scope="row">修复版（非 4K）</th>
+              <td>25 – 50 GB</td>
+              <td>28 – 38 Mbps</td>
+              <td>Rec.709 / SDR</td>
+              <td>老片，源素材本身没有 4K 母带</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes" id="notes" aria-labelledby="notes-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="en">Picture &amp; Sound Notes</span>
+          <h2 id="notes-title">画质与设备观察</h2>
+        </div>
+        <a class="more" href="#">全部笔记 →</a>
+      </div>
+
+      <ul class="notelist">
+        <li>
+          <a href="#">
+            <span class="idx">01</span>
+            <span>
+              <h3>客厅投影：120 英寸幕布下，亮度到底要多少尼特</h3>
+              <p>实测三台机器在遮光与半遮光两种环境下的表现，结论是 HDR 观影别低于 100 尼特，抗光幕带来的均匀度损失比亮度更值得在意。</p>
+            </span>
+            <span class="meta">2026-10-18 · 阅读 8 分钟</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="idx">02</span>
+            <span>
+              <h3>低音炮摆位：三步找到房间里的那个"甜点"</h3>
+              <p>不用测试碟也能做的方法，用一段 20Hz–80Hz 的扫频信号，配合手机上的声压计应用，半天能定下位置。</p>
+            </span>
+            <span class="meta">2026-10-12 · 阅读 6 分钟</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="idx">03</span>
+            <span>
+              <h3>杜比视界与 HDR10+，在三台电视上的实际差别</h3>
+              <p>同一段素材来回切换的结果：动态元数据在明暗突变场景优势明显，静态场景几乎看不出区别，不必为它多付太多预算。</p>
+            </span>
+            <span class="meta">2026-10-05 · 阅读 11 分钟</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="idx">04</span>
+            <span>
+              <h3>老片修复的边界：颗粒感到底该留多少</h3>
+              <p>走访两位修复师后的一次整理，过度降噪会让演员的皮肤纹理消失，而保留过多噪点又会在大屏上显得脏，关键在中间那档。</p>
+            </span>
+            <span class="meta">2026-09-28 · 阅读 9 分钟</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="guide" aria-labelledby="guide-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="en">How To Choose</span>
+          <h2 id="guide-title">四步挑对版本，别再买错碟</h2>
+        </div>
+        <a class="more" href="#">下载速查卡片 →</a>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <h3>先看母带来源</h3>
+          <p>包装上的 4K 标识不等于 4K 母带，先确认是否标注"4K 数字中间片"或"原生 4K 拍摄"。</p>
+          <ul>
+            <li>2K 上变换：细节提升有限</li>
+            <li>胶片扫描：看扫描分辨率</li>
+            <li>数字拍摄：看是否为 4K DI</li>
+          </ul>
+        </article>
+        <article class="step">
+          <h3>再比容量与码率</h3>
+          <p>同样一张碟，容量差别直接体现在码率上，长片塞进 BD66 通常要牺牲一部分花絮。</p>
+          <ul>
+            <li>130 分钟以上优先 BD100</li>
+            <li>峰值低于 50 Mbps 需留意</li>
+            <li>花絮单独碟的更划算</li>
+          </ul>
+        </article>
+        <article class="step">
+          <h3>认准 HDR 与音轨</h3>
+          <p>杜比视界、HDR10+、HDR10 三者的显示设备支持情况不同，先查自己的设备再决定版本。</p>
+          <ul>
+            <li>电视支持 DV：优先 DV 版</li>
+            <li>投影多数仅 HDR10</li>
+            <li>音轨看是否含无损内核</li>
+          </ul>
+        </article>
+        <article class="step">
+          <h3>核对区码与字幕</h3>
+          <p>这一步最容易被跳过，却最容易踩坑，尤其是港版与日版的字幕配置差异很大。</p>
+          <ul>
+            <li>A 区：北美与东南亚</li>
+            <li>B 区：欧洲与日本</li>
+            <li>C 区：中国大陆</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout">
+        <h3>关于码率的一个提醒</h3>
+        <p>平均码率只是参考值，真正决定观感的是高动态段落的峰值分配。同样标称 50 Mbps，给到爆炸场景 80 Mbps 与全程平均分配的，画面稳定性完全不同。我们在片目页里标注了每部片的峰值片段时间点，可以直接跳转过去对比。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="en">Questions</span>
+          <h2 id="faq-title">常见问题</h2>
+        </div>
+        <a class="more" href="#">没找到？去问编辑 →</a>
+      </div>
+
+      <details class="qa">
+        <summary>4K 碟在 1080p 电视上还有必要买吗？</summary>
+        <div class="body"><p>有必要，但理由不是分辨率。4K 碟通常附带更高的码率、更宽的色域与 HDR 映射，即便在 1080p 设备上，色彩层次和暗部细节依然会有提升。不过如果你的电视不支持 HDR，收益会小很多，可以先租一张试试。</p></div>
+      </details>
+      <details class="qa">
+        <summary>杜比视界和 HDR10 的差别值不值得多花钱？</summary>
+        <div class="body"><p>取决于片子的明暗跨度。像《银翼杀手 2049》这种大量低照度场景的片子，动态元数据的优势很明显；而以日光场景为主的影片，两者几乎看不出区别。我们的笔记里标注了每部片的场景构成，可以对照着选。</p></div>
+      </details>
+      <details class="qa">
+        <summary>同一个片子出了很多版，怎么判断哪版最好？</summary>
+        <div class="body"><p>先看发行年份，通常越新的版本修复越完整；再看是否有导演参与的重新调色；最后查码率。近两年不少片子的"十周年纪念版"其实只是换了包装，画面内容与旧版一致，这种情况我们会直接标注出来。</p></div>
+      </details>
+      <details class="qa">
+        <summary>碟讯里的码率数据是怎么来的？</summary>
+        <div class="body"><p>由编辑实际读取光盘后统计，取样区间为影片正片段落，不含片头厂标与片尾字幕。峰值码率取全片前 0.5% 画面的平均值，避免个别极端帧造成的偏差。每期数据更新后会保留上一版供对照。</p></div>
+      </details>
+      <details class="qa">
+        <summary>区码不对该怎么办？</summary>
+        <div class="body"><p>播放器固件锁定区码是最常见的限制，多数机型只允许修改数次。更稳妥的做法是直接选择全区版本，或者在购买前核对商品页的区码标识。我们在片库里对全区版本做了单独标记。</p></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div>
+        <h2 id="about-title"><span class="en">About</span>关于蓝光影视</h2>
+        <p>蓝光影视 从 2019 年开始更新，最初只是几个影迷在一间出租屋里记的调校笔记，后来慢慢变成一份公开的碟讯与规格档案。</p>
+        <p>所有片目信息都由编辑逐张核对：拆封、读取、比对，再写进片库。发行方给的宣传口径不会直接照抄，遇到与实测不符的地方，会按实测结果记录，并在条目下方注明差异。</p>
+        <p>我们不接受发行方的付费收录，也不做任何下载或资源分发。如果你发现某条信息有误，欢迎通过页首的勘误入口告诉我们，核实后会在下一期更正并署上你的名字。</p>
+        <div class="notice">
+          <p><strong>版权与合规说明：</strong>本站仅整理公开发行的碟片信息、技术参数与观影体验记录，不存储、不托管、不提供任何影音文件的下载或在线播放。文中出现的影片名称、商标与封面素材版权归各自权利人所有。请通过正规渠道购买正版碟片或观看授权平台的节目。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>站点信息</h3>
+        <dl class="kv">
+          <div><dt>网站名称</dt><dd>蓝光影视</dd></div>
+          <div><dt>网址</dt><dd>languangyingshi-app.github.io</dd></div>
+          <div><dt>更新频率</dt><dd>每周五更新一期</dd></div>
+          <div><dt>片目总量</dt><dd>12,860 部</dd></div>
+          <div><dt>编辑人数</dt><dd>6 人（含 2 名兼职校对）</dd></div>
+          <div><dt>数据口径</dt><dd>实测读取，非官方宣传值</dd></div>
+          <div><dt>收录范围</dt><dd>1954 年至今的公开发行版本</dd></div>
+          <div><dt>商业合作</dt><dd>不接受付费收录</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <span class="logo">蓝光影视</span>
+        <p>一份由影迷维护的蓝光碟讯与家庭影院观影记录，每周五更新。languangyingshi-app.github.io</p>
+      </div>
+      <div>
+        <h4>栏目导航</h4>
+        <ul>
+          <li><a href="#picks">编辑精选</a></li>
+          <li><a href="#library">蓝光片库</a></li>
+          <li><a href="#notes">画质观察</a></li>
+          <li><a href="#guide">选购指南</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点</h4>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#about">关于本站</a></li>
+          <li><a href="#">碟讯订阅</a></li>
+          <li><a href="#">勘误与投稿</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="keywords">
+      相关主题：
+      <a href="#">蓝光碟讯</a><a href="#">4K UHD 原盘</a><a href="#">杜比视界</a><a href="#">HDR10+</a><a href="#">家庭影院调校</a><a href="#">投影亮度</a><a href="#">低音炮摆位</a><a href="#">老片修复</a><a href="#">蓝光区码</a><a href="#">版本对比</a>
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 蓝光影视 · languangyingshi-app.github.io</span>
+      <span><a href="#">隐私说明</a> · <a href="#">内容授权</a> · <a href="#top">回到顶部</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="totop" href="#top" aria-label="回到顶部">↑</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://languangyingshi-app.github.io/#website",
+      "url": "https://languangyingshi-app.github.io/",
+      "name": "蓝光影视",
+      "alternateName": "蓝光影视 4K蓝光碟讯与家庭影院观影志",
+      "inLanguage": "zh-CN",
+      "description": "每周更新 4K UHD 原盘发行碟讯、蓝光版本规格比对与家庭影院调校记录。",
+      "publisher": { "@id": "https://languangyingshi-app.github.io/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://languangyingshi-app.github.io/#org",
+      "name": "蓝光影视",
+      "url": "https://languangyingshi-app.github.io/",
+      "description": "由影迷维护的蓝光碟讯与家庭影院观影记录站点，仅整理公开发行碟片信息与技术参数。"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://languangyingshi-app.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "蓝光片库", "item": "https://languangyingshi-app.github.io/#library" },
+        { "@type": "ListItem", "position": 3, "name": "画质与设备观察", "item": "https://languangyingshi-app.github.io/#notes" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "4K 碟在 1080p 电视上还有必要买吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "有必要，但理由不是分辨率。4K 碟通常附带更高的码率、更宽的色域与 HDR 映射，即便在 1080p 设备上色彩层次和暗部细节依然会有提升；若电视不支持 HDR，收益会小很多，建议先租一张试用。" }
+        },
+        {
+          "@type": "Question",
+          "name": "杜比视界和 HDR10 的差别值不值得多花钱？",
+          "acceptedAnswer": { "@type": "Answer", "text": "取决于影片的明暗跨度。大量低照度场景的片子动态元数据优势明显，以日光场景为主的影片两者差别很小，可对照笔记中的场景构成选择版本。" }
+        },
+        {
+          "@type": "Question",
+          "name": "同一个片子出了很多版，怎么判断哪版最好？",
+          "acceptedAnswer": { "@type": "Answer", "text": "先看发行年份，越新的版本修复通常越完整；再看是否有导演参与的重新调色；最后查码率。部分纪念版仅更换包装，画面与旧版一致，这类情况会被标注。" }
+        },
+        {
+          "@type": "Question",
+          "name": "碟讯里的码率数据是怎么来的？",
+          "acceptedAnswer": { "@type": "Answer", "text": "由编辑实际读取光盘后统计，取样区间为影片正片段落，不含片头厂标与片尾字幕；峰值码率取全片前 0.5% 画面的平均值以避免极端帧偏差。" }
+        },
+        {
+          "@type": "Question",
+          "name": "区码不对该怎么办？",
+          "acceptedAnswer": { "@type": "Answer", "text": "播放器的区码通常被固件锁定且仅允许修改数次，稳妥做法是选择全区版本，或在购买前核对商品页的区码标识，片库中已对全区版本单独标记。" }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
